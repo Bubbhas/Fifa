@@ -8,11 +8,6 @@ namespace FifaPlayers
 {
     public class AddPlayer
     {
-     public void push()
-        {
-
-        }
         
-
     }
 }
