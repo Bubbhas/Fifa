@@ -11,6 +11,7 @@ namespace FifaPlayers.Classes
         public int Id { get; set; }
         public string TeamName { get; set; }
         public decimal TeamMoney { get; set; }
-        public List<FootballPlayer> TeamFootballPlayers { get; set; }
+
+        public List<UserTeamPlayer> UserTeamPlayers { get; set; }
     }
 }

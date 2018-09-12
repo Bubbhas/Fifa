@@ -3,14 +3,16 @@ using FifaPlayers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FifaPlayers.Migrations
 {
     [DbContext(typeof(FifaContext))]
-    partial class FifaContextModelSnapshot : ModelSnapshot
+    [Migration("20180912134955_SolveDbShit")]
+    partial class SolveDbShit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
