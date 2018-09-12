@@ -13,6 +13,6 @@ namespace FifaPlayers.Classes
         public string UserName { get; set; }
 
         public int UserTeamId { get; set; }
-        public UserTeam MyProperty { get; set; }
+        public UserTeam UserTeam { get; set; }
     }
 }
