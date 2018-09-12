@@ -19,5 +19,9 @@ namespace FifaPlayers
         {
             optionsBuilder.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = DbFifa;");
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<UserTeamPlayer>().HasKey(x => new { x.PlayerId, x.UserTeamId });
+        }
     }
 }
