@@ -8,6 +8,8 @@ namespace FifaPlayers.Classes
 {
     public class UserTeam
     {
-        
+        public int Id { get; set; }
+        public string TeamName { get; set; }
+        public decimal TeamMoney { get; set; }
     }
 }

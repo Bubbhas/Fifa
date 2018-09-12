@@ -8,6 +8,7 @@ namespace FifaPlayers.Classes
 {
     public class RealTeam
     {
-        
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
