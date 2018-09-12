@@ -6,5 +6,9 @@ namespace FifaPlayers
 {
     class App
     {
+        internal void Run()
+        {
+            
+        }
     }
 }
