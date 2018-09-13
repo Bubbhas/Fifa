@@ -4,12 +4,15 @@ using System.Collections.Generic;
 
 namespace FifaPlayers
 {
+
     public class Menu
     {
         App app = new App();
         DataAccess dataAccess = new DataAccess();
+
         public void StartMenu()
         {
+            
             Console.Clear();
             app.WhiteCenterTextWithoutNewLine("Vad vill du göra?");
 
@@ -18,16 +21,16 @@ namespace FifaPlayers
             app.CenterText("C) Se på ditt fantasylag");
             app.CenterText("");
             app.CenterText("");
-            StartMenyChoices(Console.ReadKey().Key);
+            StartMenuChoices(Console.ReadKey().Key);
 
         }
-        public void StartMenyChoices(ConsoleKey command)
+        public void StartMenuChoices(ConsoleKey command)
         {
             switch (command)
             {
                 case ConsoleKey.A: AddUserTeam(); break;
                 case ConsoleKey.B: någonmetod: break;
-                case ConsoleKey.C: ShowUserTeamLineUp(); break;
+                case ConsoleKey.C: ShowUserTeamLineUp(dataAccess.GetActiveUserId()); break;
             }
         }
 
@@ -51,7 +54,7 @@ namespace FifaPlayers
             DefendersChoice();
             MidfielderChoice();
             ForwardChoice();
-            ShowUserTeamLineUp();
+            ShowUserTeamLineUp(dataAccess.GetActiveUserId());
         }
         private void GoalKeeperChoice()
         {
@@ -110,7 +113,7 @@ namespace FifaPlayers
 
         private void ShowUserTeamMoney()
         {
-            UserTeam userTeam = dataAccess.GetCashOfUserTeam();
+            UserTeam userTeam = dataAccess.GetCashOfUserTeam(dataAccess.GetActiveUserId());
             app.CenterText($"{userTeam.TeamMoney}");
         }
 
@@ -119,7 +122,7 @@ namespace FifaPlayers
             new UserTeamPlayer
             {
                 PlayerId = id,
-                // UserTeamId = 
+                UserTeamId = dataAccess.GetActiveUserId()
             };
         }
 
