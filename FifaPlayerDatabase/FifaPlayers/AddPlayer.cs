@@ -34,7 +34,7 @@ namespace FifaPlayers
 
                 players.Add(new FootballPlayer {
 
-                    FirstName = name,
+                    Name = name,
                     Position = Enum.Parse<Position>(position),
                     RealTeam = new RealTeam
                     {
@@ -46,7 +46,7 @@ namespace FifaPlayers
 
                 foreach (var item in players)
                 {
-                    Console.WriteLine(item.Position + item.FirstName.PadRight(20) + item.RealTeam.ToString().PadRight(20));
+                    Console.WriteLine(item.Position + item.Name.PadRight(20) + item.RealTeam.ToString().PadRight(20));
                 }
 
             }
