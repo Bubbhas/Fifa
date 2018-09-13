@@ -41,7 +41,7 @@ namespace FifaPlayers
 
         internal int GetActiveUserId()
         {
-            return context.Users.Single(x => x.Id).FirstOrDefault();
+            return context.Users.Select(x=>x.Id).FirstOrDefault();
         }
 
         internal int GetActiveUserTeamId(int userId)
@@ -61,10 +61,11 @@ namespace FifaPlayers
 
         internal bool TestUserNameAndPassword(string userName, string password)
         {
-            List<User> userList = context.Users.All(x => x.UserName).ToList();
-            var result = from p in userList
-                         where context.Users.Any(userName => p.UserName == userName)
-                         select p;
+            throw new NotImplementedException();
+            //List<User> userList = context.Users.All(x => x.UserName).ToList();
+            //var result = from p in userList
+            //             where context.Users.Any(userName => p.UserName == userName.ToString())
+            //             select p;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace FifaPlayers
         internal void Run()
         {
             new LogIn().LogInMethod();
-            new Menu().StartMenu();
+            //new Menu().StartMenu();
             //CurrentUser = new User { UserName = "Kalle"};
         }
 
