@@ -27,8 +27,19 @@ namespace FifaPlayers
             {
                 case ConsoleKey.A: AddUserTeam(); break;
                 case ConsoleKey.B: någonmetod: break;
-                case ConsoleKey.C: någonmetod2: break;
+                case ConsoleKey.C: ShowUserTeamLineUp(); break;
             }
+        }
+
+        private void ShowUserTeamLineUp(int id)
+        {
+            List<FootballPlayer> players = dataAccess.GetUserTeamPlayers(id);
+            foreach (var player in players)
+            {
+                
+
+            }
+
         }
 
         private void AddUserTeam()
@@ -42,7 +53,6 @@ namespace FifaPlayers
             MidfielderChoice();
             ForwardChoice();
         }
-
         private void GoalKeeperChoice()
         {
             List<FootballPlayer> GoalKeepers = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Goalkeeper);
