@@ -1,5 +1,6 @@
 ﻿using FifaPlayers.Classes;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -36,6 +37,21 @@ namespace FifaPlayers
         internal List<User> GetListOfUsers()
         {
             return context.Users.ToList();
+        }
+
+        internal string CheckValidationOnUsername()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal bool CreateProfile(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal bool TestUserNameAndPassword(string userName, string password)
+        {
+            throw new NotImplementedException();
         }
     }
 }
