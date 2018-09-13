@@ -10,16 +10,15 @@ namespace FifaPlayers
 {
     public class AddPlayer
     {
-
         public void push()
         {
-            AddPlayerFromInternet("ManchesterUnited.txt");
-            AddPlayerFromInternet("Chelsea.txt");
-            AddPlayerFromInternet("Arsenal.txt");
-            AddPlayerFromInternet("Tottenham.txt");
-            AddPlayerFromInternet("Manchester City.txt");
-            AddPlayerFromInternet("Liverpool.txt");
-      
+                AddPlayerFromInternet(@"TeamsTextFile\ManchesterUnited.txt");
+                AddPlayerFromInternet(@"TeamsTextFile\Chelsea.txt");
+                AddPlayerFromInternet(@"TeamsTextFile\Arsenal.txt");
+                AddPlayerFromInternet(@"TeamsTextFile\Tottenham.txt");
+                AddPlayerFromInternet(@"TeamsTextFile\Manchester City.txt");
+                AddPlayerFromInternet(@"TeamsTextFile\Liverpool.txt");
+
         }
 
         private void AddPlayerFromInternet(string v)
@@ -50,13 +49,18 @@ namespace FifaPlayers
                 }
                 );
 
-                foreach (var item in players)
-                {
-                    Console.WriteLine(item.Position + item.Name.PadRight(20) + item.RealTeam.ToString().PadRight(20));
-                }
-
+                //foreach (var item in players)
+                //{
+                //    Console.WriteLine(item.Position + item.Name.PadRight(20) + item.RealTeam.ToString().PadRight(20));
+                //}
+                
             }
 
+            using (var context = new FifaContext())
+            {
+                context.FootballPlayers.AddRange(players);
+                context.SaveChanges();
+            }
 
             //FirstName.Replace(",", "").Replace("\\", "").Trim() "Petr CechPetr Cech"    string
             

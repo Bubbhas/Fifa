@@ -41,12 +41,12 @@ namespace FifaPlayers
 
         internal int GetActiveUserId()
         {
-            return context.Users.Select(x=>x.Id).FirstOrDefault();
+            return context.Users.Select(x => x.Id).FirstOrDefault();
         }
 
         internal int GetActiveUserTeamId(int userId)
         {
-            return context.Users.Single(x=>x.Id == userId).ActiveUserTeamId;
+            return context.Users.Single(x => x.Id == userId).ActiveUserTeamId;
         }
 
         internal string CheckValidationOnUsername(string UserNameInput)
@@ -56,16 +56,29 @@ namespace FifaPlayers
 
         internal bool CreateProfile(string username, string password)
         {
-            throw new NotImplementedException();
+            if (UserNameExist(username))
+                return false;
+            else
+            {
+                var user = new User
+                {
+                    UserName = username,
+                    Password = password
+                };
+                context.Users.Add(user);
+                context.SaveChanges();
+                return true;
+            }
         }
 
-        internal bool TestUserNameAndPassword(string userName, string password)
+        internal bool UserNameExist(string username)
         {
-            throw new NotImplementedException();
-            //List<User> userList = context.Users.All(x => x.UserName).ToList();
-            //var result = from p in userList
-            //             where context.Users.Any(userName => p.UserName == userName.ToString())
-            //             select p;
+            return context.Users.Any(x => x.UserName == username);
+        }
+
+        internal User TestUserNameAndPassword(string userName, string password)
+        {
+            return context.Users.FirstOrDefault(x => x.UserName == userName && x.Password == password);
         }
     }
 }

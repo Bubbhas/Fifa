@@ -30,13 +30,13 @@ namespace FifaPlayers
             {
                 case ConsoleKey.A: AddUserTeam(); break;
                 case ConsoleKey.B: någonmetod: break;
-                case ConsoleKey.C: ShowUserTeamLineUp(dataAccess.GetActiveUserId()); break;
+                case ConsoleKey.C: ShowUserTeamLineUp(); break;
             }
         }
 
-        private void ShowUserTeamLineUp(int id)
+        private void ShowUserTeamLineUp()
         {
-            List<FootballPlayer> players = dataAccess.GetUserTeamPlayers(id);
+            List<FootballPlayer> players = dataAccess.GetUserTeamPlayers(LogIn.CurrentUser.Id);
             foreach (var player in players)
             {
                 app.CenterText($"{player.Position.ToString()}: {player.Name}");
@@ -54,7 +54,7 @@ namespace FifaPlayers
             DefendersChoice();
             MidfielderChoice();
             ForwardChoice();
-            ShowUserTeamLineUp(dataAccess.GetActiveUserId());
+            ShowUserTeamLineUp();
         }
         private void GoalKeeperChoice()
         {

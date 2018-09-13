@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FifaPlayers.Classes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,6 +9,9 @@ namespace FifaPlayers
     {
         DataAccess dataAccess = new DataAccess();
         App app = new App();
+
+        public static User CurrentUser;
+
         public void LogInMethod()
         {
             app.CenterText("Välkommen till football fantasy");
@@ -90,9 +94,10 @@ namespace FifaPlayers
 
             Console.WriteLine();
 
-            bool access = dataAccess.TestUserNameAndPassword(userName, password);
-            if(access)
+            User access = dataAccess.TestUserNameAndPassword(userName, password);
+            if (access != null)
             {
+                CurrentUser = access;
                 Console.Clear();
                 app.CenterText("Du är nu inloggad");
                 Console.ReadKey();
