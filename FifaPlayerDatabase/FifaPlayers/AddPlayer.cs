@@ -12,16 +12,16 @@ namespace FifaPlayers
     {
         public void push()
         {
-                AddPlayerFromInternet(@"TeamsTextFile\ManchesterUnited.txt");
-                AddPlayerFromInternet(@"TeamsTextFile\Chelsea.txt");
-                AddPlayerFromInternet(@"TeamsTextFile\Arsenal.txt");
-                AddPlayerFromInternet(@"TeamsTextFile\Tottenham.txt");
-                AddPlayerFromInternet(@"TeamsTextFile\Manchester City.txt");
-                AddPlayerFromInternet(@"TeamsTextFile\Liverpool.txt");
+                AddPlayerFromInternet(@"TeamsTextFile\ManchesterUnited.txt", "Manchester United");
+                AddPlayerFromInternet(@"TeamsTextFile\Chelsea.txt", "Chelsea");
+                AddPlayerFromInternet(@"TeamsTextFile\Arsenal.txt", "Arsenal");
+                AddPlayerFromInternet(@"TeamsTextFile\Tottenham.txt", "Tottenham");
+                AddPlayerFromInternet(@"TeamsTextFile\Manchester City.txt", "Manchester City");
+                AddPlayerFromInternet(@"TeamsTextFile\Liverpool.txt", "Liverpool");
 
         }
 
-        private void AddPlayerFromInternet(string v)
+        private void AddPlayerFromInternet(string v, string teamName)
         {
             var allLines = File.ReadAllLines(v);
 
@@ -43,7 +43,7 @@ namespace FifaPlayers
                     Position = Enum.Parse<Position>(position),
                     RealTeam = new RealTeam
                     {
-                        Name = v
+                        Name = teamName
                     }
                
                 }
