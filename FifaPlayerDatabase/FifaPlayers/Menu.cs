@@ -51,7 +51,7 @@ namespace FifaPlayers
             DefendersChoice();
             MidfielderChoice();
             ForwardChoice();
-            ShowUserTeamLineUp()
+            ShowUserTeamLineUp();
         }
         private void GoalKeeperChoice()
         {
