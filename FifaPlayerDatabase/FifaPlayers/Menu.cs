@@ -33,12 +33,47 @@ namespace FifaPlayers
 
         private void AddUserTeam()
         {
+            
             app.WhiteCenterTextWithoutNewLine("Ange ett önskat lagnamn: ");
             CreateUserTeam(Console.ReadLine());
             List<FootballPlayer> GoalKeepers = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Goalkeeper);
             ShowPlayers(GoalKeepers);
-            Console.WriteLine("Välj en målvakt genom att skriva in Id");
+            app.WhiteCenterTextWithoutNewLine("Välj en målvakt genom att skriva in Id");
             AddPlayerToTeam(int.Parse(Console.ReadLine()));
+            ShowUserTeamMoney();
+            MidfielderChoice();
+            ForwardChoice()
+        }
+        private void ForwardChoice()
+        {
+            List<FootballPlayer> midfielders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Midfielder);
+            for (int i = 0; i < 2; i++)
+            {
+                ShowPlayers(midfielders);
+                app.WhiteCenterTextWithoutNewLine("Välj mittfältare genoma att skriva in Id");
+                AddPlayerToTeam(int.Parse(Console.ReadLine()));
+                ShowUserTeamMoney();
+            }
+
+        }
+
+        private void MidfielderChoice()
+        {
+            List<FootballPlayer> midfielders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Midfielder);
+            for (int i = 0; i < 4; i++)
+            {
+                ShowPlayers(midfielders);
+                app.WhiteCenterTextWithoutNewLine("Välj mittfältare genoma att skriva in Id");
+                AddPlayerToTeam(int.Parse(Console.ReadLine()));
+                ShowUserTeamMoney();
+            }
+           
+        }
+
+        private void ShowUserTeamMoney()
+        {
+            UserTeam userTeam = dataAccess.GetCashOfUserTeam();
+            app.CenterText($"{userTeam.TeamMoney}");
         }
 
         private void AddPlayerToTeam(int id)
@@ -47,7 +82,7 @@ namespace FifaPlayers
             {
                 PlayerId = id,
                 UserTeamId = 
-            }
+            };
         }
 
         private void ShowPlayers(List<FootballPlayer> player)
