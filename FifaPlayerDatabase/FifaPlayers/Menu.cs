@@ -22,8 +22,8 @@ namespace FifaPlayers
             app.CenterText("");
             app.CenterText("");
             StartMenuChoices(Console.ReadKey().Key);
-
         }
+
         public void StartMenuChoices(ConsoleKey command)
         {
             switch (command)
@@ -92,7 +92,6 @@ namespace FifaPlayers
                 ShowUserTeamMoney();
                 Console.ReadKey();
             }
-
         }
 
         private void MidfielderChoice()
@@ -130,7 +129,7 @@ namespace FifaPlayers
         {
             foreach (var item in player)
             {
-                Console.WriteLine($"ID:{item.Id} Namn:{item.Name} Pris:{item.Price}kr Position: {item.Position} Lag:{item.RealTeam.Name}");
+                app.CenterText($"ID:{item.Id} Namn:{item.Name} Pris:{item.Price}kr Position: {item.Position} Lag:{item.RealTeam.Name}");
             }
         }
 
