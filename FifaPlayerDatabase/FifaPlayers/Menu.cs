@@ -36,23 +36,48 @@ namespace FifaPlayers
             
             app.WhiteCenterTextWithoutNewLine("Ange ett önskat lagnamn: ");
             CreateUserTeam(Console.ReadLine());
+            ShowUserTeamMoney();
+            GoalKeeperChoice();
+            DefendersChoice();
+            MidfielderChoice();
+            ForwardChoice();
+        }
+
+        private void GoalKeeperChoice()
+        {
             List<FootballPlayer> GoalKeepers = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Goalkeeper);
             ShowPlayers(GoalKeepers);
             app.WhiteCenterTextWithoutNewLine("Välj en målvakt genom att skriva in Id");
             AddPlayerToTeam(int.Parse(Console.ReadLine()));
-            ShowUserTeamMoney();
-            MidfielderChoice();
-            ForwardChoice()
         }
+
+        private void DefendersChoice()
+        {
+            List<FootballPlayer> defenders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Defender);
+            for (int i = 0; i < 3; i++)
+            {
+                ShowPlayers(defenders);
+                app.WhiteCenterTextWithoutNewLine("Välj back genom att skriva in Id");
+                int id = int.Parse(Console.ReadLine());
+                defenders.RemoveAt(id);
+                AddPlayerToTeam(id);
+                ShowUserTeamMoney();
+                Console.ReadKey();
+            }
+        }
+
         private void ForwardChoice()
         {
-            List<FootballPlayer> midfielders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Midfielder);
-            for (int i = 0; i < 2; i++)
+            List<FootballPlayer> forwards = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Midfielder);
+            for (int i = 0; i < 1; i++)
             {
-                ShowPlayers(midfielders);
-                app.WhiteCenterTextWithoutNewLine("Välj mittfältare genoma att skriva in Id");
-                AddPlayerToTeam(int.Parse(Console.ReadLine()));
+                ShowPlayers(forwards);
+                app.WhiteCenterTextWithoutNewLine("Välj forward genom att skriva in Id");
+                int id = int.Parse(Console.ReadLine());
+                forwards.RemoveAt(id);
+                AddPlayerToTeam(id);
                 ShowUserTeamMoney();
+                Console.ReadKey();
             }
 
         }
@@ -60,12 +85,15 @@ namespace FifaPlayers
         private void MidfielderChoice()
         {
             List<FootballPlayer> midfielders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Midfielder);
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 3; i++)
             {
                 ShowPlayers(midfielders);
-                app.WhiteCenterTextWithoutNewLine("Välj mittfältare genoma att skriva in Id");
-                AddPlayerToTeam(int.Parse(Console.ReadLine()));
+                app.WhiteCenterTextWithoutNewLine("Välj mittfältare genom att skriva in Id");
+                int id = int.Parse(Console.ReadLine());
+                midfielders.RemoveAt(id);
+                AddPlayerToTeam(id);
                 ShowUserTeamMoney();
+                Console.ReadKey();
             }
            
         }
