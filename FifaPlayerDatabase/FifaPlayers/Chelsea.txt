@@ -1,0 +1,27 @@
+, Willy CaballeroWilly Caballero	Goalkeeper	 Argentina
+, Antonio RüdigerAntonio Rüdiger	Defender	 Germany
+, Marcos AlonsoMarcos Alonso	Defender	 Spain
+, Victor MosesVictor Moses	Defender	 Nigeria
+, Davide ZappacostaDavide Zappacosta	Defender	 Italy
+, Gary CahillGary Cahill	Defender	 England
+, Andreas ChristensenAndreas Christensen	Defender	 Denmark
+, César AzpilicuetaCésar Azpilicueta	Defender	 Spain
+, David LuizDavid Luiz	Defender	 Brazil
+, EmersonEmerson	Defender	 Italy
+, Cesc FàbregasCesc Fàbregas	Midfielder	 Spain
+, Daniel DrinkwaterDaniel Drinkwater	Midfielder	 England
+, N'Golo KantéN'Golo Kanté	Midfielder	 France
+, Ross BarkleyRoss Barkley	Midfielder	 England
+, Álvaro MorataÁlvaro Morata	Forward	 Spain
+, Eden HazardEden Hazard	Forward	 Belgium
+, PedroPedro	Forward	 Spain
+, Olivier GiroudOlivier Giroud	Forward	 France
+, WillianWillian	Forward	 Brazil
+, Callum Hudson-OdoiCallum Hudson-Odoi	Forward	 England
+, Ruben Loftus-CheekRuben Loftus-Cheek	Midfielder	 England
+, JorginhoJorginho	Midfielder	 Italy
+, Robert GreenRobert Green	Goalkeeper	 England
+, Marcin BulkaMarcin Bulka	Goalkeeper	 Poland
+, Ethan AmpaduEthan Ampadu	Defender	 Wales
+, Kepa ArrizabalagaKepa Arrizabalaga	Goalkeeper	 Spain
+, Mateo KovacicMateo Kovacic	Midfielder	 Croatia

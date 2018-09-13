@@ -1,0 +1,26 @@
+, Simon MignoletSimon Mignolet	Goalkeeper	 Belgium
+, Nathaniel ClyneNathaniel Clyne	Defender	 England
+, Virgil van DijkVirgil van Dijk	Defender	 Netherlands
+, Dejan LovrenDejan Lovren	Defender	 Croatia
+, Joseph GomezJoseph Gomez	Defender	 England
+, Alberto MorenoAlberto Moreno	Defender	 Spain
+, Andrew RobertsonAndrew Robertson	Defender	 Scotland
+, Joel MatipJoel Matip	Defender	 Cameroon
+, Trent Alexander-ArnoldTrent Alexander-Arnold	Defender	 England
+, Georginio WijnaldumGeorginio Wijnaldum	Midfielder	 Netherlands
+, James MilnerJames Milner	Midfielder	 England
+, Jordan HendersonJordan Henderson	Midfielder	 England
+, Adam LallanaAdam Lallana	Midfielder	 England
+, Alex Oxlade-ChamberlainAlex Oxlade-Chamberlain	Midfielder	 England
+, Roberto FirminoRoberto Firmino	Forward	 Brazil
+, Mohamed SalahMohamed Salah	Forward	 Egypt
+, Sadio ManéSadio Mané	Forward	 Senegal
+, Dominic SolankeDominic Solanke	Forward	 England
+, FabinhoFabinho	Midfielder	 Brazil
+, Naby KeitaNaby Keita	Midfielder	 Guinea
+, Lazar MarkovicLazar Markovic	Midfielder	 Serbia
+, Daniel SturridgeDaniel Sturridge	Forward	 England
+, Divock OrigiDivock Origi	Forward	 Belgium
+, Xherdan ShaqiriXherdan Shaqiri	Forward	 Switzerland
+, AlissonAlisson	Goalkeeper	 Brazil
+, Rhian BrewsterRhian Brewster	Forward	 England

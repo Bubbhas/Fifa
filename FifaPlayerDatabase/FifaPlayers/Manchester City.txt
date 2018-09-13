@@ -1,0 +1,27 @@
+, Claudio BravoClaudio Bravo	Goalkeeper	 Chile
+, EdersonEderson	Goalkeeper	 Brazil
+, Daniel GrimshawDaniel Grimshaw	Goalkeeper	 England
+, Kyle WalkerKyle Walker	Defender	 England
+, DaniloDanilo	Defender	 Brazil
+, Vincent KompanyVincent Kompany	Defender	 Belgium
+, John StonesJohn Stones	Defender	 England
+, Aymeric LaporteAymeric Laporte	Defender	 France
+, Benjamin MendyBenjamin Mendy	Defender	 France
+, Nicolás OtamendiNicolás Otamendi	Defender	 Argentina
+, Ilkay GündoganIlkay Gündogan	Midfielder	 Germany
+, Kevin De BruyneKevin De Bruyne	Midfielder	 Belgium
+, Fabian DelphFabian Delph	Midfielder	 England
+, Bernardo SilvaBernardo Silva	Midfielder	 Portugal
+, David SilvaDavid Silva	Midfielder	 Spain
+, FernandinhoFernandinho	Midfielder	 Brazil
+, Oleksandr ZinchenkoOleksandr Zinchenko	Midfielder	 Ukraine
+, Phil FodenPhil Foden	Midfielder	 England
+, Raheem SterlingRaheem Sterling	Forward	 England
+, Sergio AgüeroSergio Agüero	Forward	 Argentina
+, Leroy SanéLeroy Sané	Forward	 Germany
+, Gabriel JesusGabriel Jesus	Forward	 Brazil
+, Brahim DiazBrahim Diaz	Forward	 Spain
+, Riyad MahrezRiyad Mahrez	Midfielder	 Algeria
+, Eliaquim MangalaEliaquim Mangala	Defender	 France
+, Philippe SandlerPhilippe Sandler	Defender	 Netherlands
+, Arijanet MuricArijanet Muric	Goalkeeper	 Montenegro
