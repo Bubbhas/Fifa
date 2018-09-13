@@ -1,0 +1,31 @@
+, David De GeaDavid De Gea	Goalkeeper	 Spain
+, Sergio RomeroSergio Romero	Goalkeeper	 Argentina
+, Victor LindelöfVictor Lindelöf	Defender	 Sweden
+, Eric BaillyEric Bailly	Defender	 Cote D'Ivoire
+, Phil JonesPhil Jones	Defender	 England
+, Marcos RojoMarcos Rojo	Defender	 Argentina
+, Chris SmallingChris Smalling	Defender	 England
+, Ashley YoungAshley Young	Defender	 England
+, Luke ShawLuke Shaw	Defender	 England
+, Antonio ValenciaAntonio Valencia	Defender	 Ecuador
+, Matteo DarmianMatteo Darmian	Defender	 Italy
+, Paul PogbaPaul Pogba	Midfielder	 France
+, Juan MataJuan Mata	Midfielder	 Spain
+, Jesse LingardJesse Lingard	Midfielder	 England
+, Ander HerreraAnder Herrera	Midfielder	 Spain
+, Marouane FellainiMarouane Fellaini	Midfielder	 Belgium
+, Nemanja MaticNemanja Matic	Midfielder	 Serbia
+, Scott McTominayScott McTominay	Midfielder	 Scotland
+, Alexis SánchezAlexis Sánchez	Forward	 Chile
+, Romelu LukakuRomelu Lukaku	Forward	 Belgium
+, Anthony MartialAnthony Martial	Forward	 France
+, Marcus RashfordMarcus Rashford	Forward	 England
+, Diogo DalotDiogo Dalot	Defender	 Portugal
+, FredFred	Midfielder	 Brazil
+, Andreas PereiraAndreas Pereira	Midfielder	 Brazil
+, Lee GrantLee Grant	Goalkeeper	 England
+, Matej KovarMatej Kovar	Goalkeeper	 Czech Republic
+, Tahith ChongTahith Chong	Midfielder	 Netherlands
+, Angel GomesAngel Gomes	Midfielder	 England
+, Ethan HamiltonEthan Hamilton	Midfielder	 Scotland
+, Joshua BohuiJoshua Bohui	Forward	 England

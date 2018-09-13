@@ -1,0 +1,27 @@
+, Hugo LlorisHugo Lloris	Goalkeeper	 France
+, Michel VormMichel Vorm	Goalkeeper	 Netherlands
+, Paulo GazzanigaPaulo Gazzaniga	Goalkeeper	 Argentina
+, Kieran TrippierKieran Trippier	Defender	 England
+, Danny RoseDanny Rose	Defender	 England
+, Toby AlderweireldToby Alderweireld	Defender	 Belgium
+, Jan VertonghenJan Vertonghen	Defender	 Belgium
+, Davinson SánchezDavinson Sánchez	Defender	 Colombia
+, Juan FoythJuan Foyth	Defender	 Argentina
+, Serge AurierSerge Aurier	Defender	 Cote D'Ivoire
+, Ben DaviesBen Davies	Defender	 Wales
+, Kyle Walker-PetersKyle Walker-Peters	Defender	 England
+, Erik LamelaErik Lamela	Midfielder	 Argentina
+, Victor WanyamaVictor Wanyama	Midfielder	 Kenya
+, Eric DierEric Dier	Midfielder	 England
+, Moussa SissokoMoussa Sissoko	Midfielder	 France
+, Mousa DembéléMousa Dembélé	Midfielder	 Belgium
+, Dele AlliDele Alli	Midfielder	 England
+, Christian EriksenChristian Eriksen	Midfielder	 Denmark
+, Lucas MouraLucas Moura	Midfielder	 Brazil
+, Harry WinksHarry Winks	Midfielder	 England
+, Son Heung-MinSon Heung-Min	Forward	 South Korea
+, Harry KaneHarry Kane	Forward	 England
+, Fernando LlorenteFernando Llorente	Forward	 Spain
+, Georges-Kévin NkoudouGeorges-Kévin Nkoudou	Midfielder	 France
+, Vincent JanssenVincent Janssen	Forward	 Netherlands
+, Luke AmosLuke Amos	Midfielder	 England

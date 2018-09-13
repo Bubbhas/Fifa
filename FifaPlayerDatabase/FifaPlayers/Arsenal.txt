@@ -1,0 +1,25 @@
+,Petr CechPetr Cech	Goalkeeper	 Czech Republic
+,Héctor BellerínHéctor Bellerín	Defender	 Spain
+,Laurent KoscielnyLaurent Koscielny	Defender	 France
+,Rob HoldingRob Holding	Defender	 England
+,Nacho MonrealNacho Monreal	Defender	 Spain
+,Shkodran MustafiShkodran Mustafi	Defender	 Germany
+,Konstantinos MavropanosKonstantinos Mavropanos	Defender	 Greece
+,Sead KolasinacSead Kolasinac	Defender	 Bosnia And Herzegovina
+,Mohamed ElnenyMohamed Elneny	Midfielder	 Egypt
+,Henrikh MkhitaryanHenrikh Mkhitaryan	Midfielder	 Armenia
+,Aaron RamseyAaron Ramsey	Midfielder	 Wales
+,Mesut ÖzilMesut Özil	Midfielder	 Germany
+,Alex IwobiAlex Iwobi	Midfielder	 Nigeria
+,Ainsley Maitland-NilesAinsley Maitland-Niles	Midfielder	 England
+,Granit XhakaGranit Xhaka	Midfielder	 Switzerland
+,Alexandre LacazetteAlexandre Lacazette	Forward	 France
+,Pierre-Emerick AubameyangPierre-Emerick Aubameyang	Forward	 Gabon
+,Danny WelbeckDanny Welbeck	Forward	 England
+,Stephan LichtsteinerStephan Lichtsteiner	Defender	 Switzerland
+,Bernd LenoBernd Leno	Goalkeeper	 Germany
+,Emiliano MartínezEmiliano Martínez	Goalkeeper	 Argentina
+,Carl JenkinsonCarl Jenkinson	Defender	 England
+,SokratisSokratis	Defender	 Greece
+,Lucas TorreiraLucas Torreira	Midfielder	 Uruguay
+,Matteo GuendouziMatteo Guendouzi	Midfielder	 France

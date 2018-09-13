@@ -18,7 +18,7 @@ namespace FifaPlayers
 
         private void AddPlayerFromInternet()
         {
-            var allLines = File.ReadAllLines("AddPLayer.txt");
+            var allLines = File.ReadAllLines("ManchesterUnited.txt");
 
             List<FootballPlayer> players = new List<FootballPlayer>();
 
@@ -38,11 +38,16 @@ namespace FifaPlayers
                     Position = Enum.Parse<Position>(position),
                     RealTeam = new RealTeam
                     {
-                        Name = "Arsenal"
+                        Name = "Manchester United"
                     }
                
                 }
                 );
+
+                foreach (var item in players)
+                {
+                    Console.WriteLine(item.Position + item.FirstName.PadRight(20) + item.RealTeam.ToString().PadRight(20));
+                }
 
             }
 
