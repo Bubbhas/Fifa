@@ -28,9 +28,14 @@ namespace FifaPlayers
             return context.FootballPlayers.Include(x => x.RealTeam).Where(x => x.Position == position && x.RealTeam == realTeam).ToList();
         }
 
-        internal UserTeam GetCash(int id)
+        internal UserTeam GetCashOfUserTeam(int id)
         {
-            return context.UserTeams.Where(x => x.Id == id);
+            return context.UserTeams.Where(x => x.Id == id).FirstOrDefault();
+        }
+
+        internal List<User> GetListOfUsers()
+        {
+            return context.Users.ToList();
         }
     }
 }
