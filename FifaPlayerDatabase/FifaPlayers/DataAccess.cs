@@ -1,10 +1,7 @@
 ﻿using FifaPlayers.Classes;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FifaPlayers
 {
@@ -21,11 +18,19 @@ namespace FifaPlayers
             return context.FootballPlayers.Where(x => x.Position == position).ToList();
         }
 
-        internal List<FootballPlayer> GetUserTeamPlayers(int Id)
+        internal List<FootballPlayer> GetUserTeamPlayers(int id)
         {
-            return context.FootballPlayers.Include(x => x.UserTeamPlayers.Where(p => p.UserTeamId == Id)).ToList();
+            return context.FootballPlayers.Include(x => x.UserTeamPlayers.Where(p => p.UserTeamId == id)).ToList();
         }
 
+        internal List<FootballPlayer> GetAllPlayersWithSpecificPositionAndRealTeam(Position position, RealTeam realTeam)
+        {
+            return context.FootballPlayers.Include(x => x.RealTeam).Where(x => x.Position == position && x.RealTeam == realTeam).ToList();
+        }
 
+        internal UserTeam GetCash(int id)
+        {
+            return context.UserTeams.Where(x => x.Id == id);
+        }
     }
 }
