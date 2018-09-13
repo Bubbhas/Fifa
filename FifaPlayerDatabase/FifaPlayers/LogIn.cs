@@ -37,7 +37,7 @@ namespace FifaPlayers
             app.CenterText("Skapa din profil!\n");
             app.WhiteCenterTextWithoutNewLine("Ange ditt önskade användarnamn: ");
             string username = Console.ReadLine();
-            string checkedUsername = CheckValidationOnUsername();
+            string checkedUsername = dataAccess.CheckValidationOnUsername();
             string password = "";
             app.WhiteCenterTextWithoutNewLine("Ange ditt lösenord: ");
             ConsoleKeyInfo key;
