@@ -44,6 +44,16 @@ namespace FifaPlayers
             return context.Users.Select(x => x.Id).FirstOrDefault();
         }
 
+        internal int CheckNumberofPlayers(Position position)
+        {
+            int nrOfPlayersInPos = 0;
+            foreach (var player in GetUserTeamPlayers(LogIn.CurrentUser.Id).Where(x=>x.Position == position))
+            {
+                nrOfPlayersInPos++;
+            }
+            return nrOfPlayersInPos;
+        }
+
         internal void ChangePlayer(int v)
         {
             
