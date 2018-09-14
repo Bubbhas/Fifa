@@ -33,6 +33,11 @@ namespace FifaPlayers
             }
         }
 
+        private void ChangePlayersInTeam()
+        {
+            throw new NotImplementedException();
+        }
+
         private void ShowUserTeamLineUp()
         {
             List<FootballPlayer> players = dataAccess.GetUserTeamPlayers(LogIn.CurrentUser.Id);
@@ -48,7 +53,7 @@ namespace FifaPlayers
         {
             app.CenterText("Ange ett önskat lagnamn: ");
             CreateUserTeam(Console.ReadLine());
-            ShowUserTeamMoney();
+            //ShowUserTeamMoney();
             GoalKeeperChoice();
             DefendersChoice();
             MidfielderChoice();
@@ -81,7 +86,7 @@ namespace FifaPlayers
                     int id = int.Parse(Console.ReadLine());
                     defenders.RemoveAt(id);
                     AddPlayerToTeam(id);
-                    ShowUserTeamMoney();
+                    //ShowUserTeamMoney();
                     Console.ReadKey();
                 }
             }
@@ -99,7 +104,7 @@ namespace FifaPlayers
                     int id = int.Parse(Console.ReadLine());
                     midfielders.RemoveAt(id);
                     AddPlayerToTeam(id);
-                    ShowUserTeamMoney();
+                    //ShowUserTeamMoney();
                     Console.ReadKey();
                 }
             }
@@ -117,17 +122,17 @@ namespace FifaPlayers
                     int id = int.Parse(Console.ReadLine());
                     forwards.RemoveAt(id);
                     AddPlayerToTeam(id);
-                    ShowUserTeamMoney();
+                    //ShowUserTeamMoney();
                     Console.ReadKey();
                 }
             }
         }
 
-        private void ShowUserTeamMoney()
-        {
-            UserTeam userTeam = dataAccess.GetCashOfUserTeam(dataAccess.GetActiveUserId());
-            app.CenterText($"Du har kvar {userTeam.TeamMoney}kr");
-        }
+        //private void //ShowUserTeamMoney()
+        //{
+        //    UserTeam userTeam = dataAccess.GetCashOfUserTeam(dataAccess.GetActiveUserId());
+        //    app.CenterText($"Du har kvar {userTeam.TeamMoney}kr");
+        //}
 
         private void AddPlayerToTeam(int id)
         {
