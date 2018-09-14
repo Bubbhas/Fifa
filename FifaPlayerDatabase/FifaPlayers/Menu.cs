@@ -14,9 +14,6 @@ namespace FifaPlayers
         {
             
             Console.Clear();
-            List<FootballPlayer> GoalKeepers = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Goalkeeper);
-            ShowPlayers(GoalKeepers);
-            Console.ReadKey();
             //app.WhiteCenterTextWithoutNewLine("Vad vill du göra?");
 
             //app.CenterText("A) Skapa ditt fantasylag");
@@ -132,7 +129,6 @@ namespace FifaPlayers
         {
             foreach (var item in player)
             {
-                //app.CenterText($"ID:{item.Id.ToString()} Namn:{item.Name} Pris:{item.Price.ToString()}kr Position: {item.Position.ToString()} Lag:{item.RealTeam.Name}");
                 Console.WriteLine($"ID:{item.Id.ToString().PadRight(10)} Namn:{item.Name.PadRight(10)} {item.Price.ToString().PadRight(10)}{item.Position.ToString().PadRight(10)} Lag:{item.RealTeam.Name}");
             }
         }
