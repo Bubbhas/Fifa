@@ -12,16 +12,15 @@ namespace FifaPlayers
 
         public void StartMenu()
         {
-            
             Console.Clear();
-            //app.WhiteCenterTextWithoutNewLine("Vad vill du göra?");
+            app.WhiteCenterTextWithoutNewLine("Vad vill du göra?");
 
-            //app.CenterText("A) Skapa ditt fantasylag");
-            //app.CenterText("B) Ändra i ditt fantasy");
-            //app.CenterText("C) Se på ditt fantasylag");
-            //app.CenterText("");
-            //app.CenterText("");
-            //StartMenuChoices(Console.ReadKey().Key);
+            app.CenterText("A) Skapa ditt fantasylag");
+            app.CenterText("B) Ändra i ditt fantasy");
+            app.CenterText("C) Se på ditt fantasylag");
+            app.CenterText("");
+            app.CenterText("");
+            StartMenuChoices(Console.ReadKey().Key);
         }
 
         public void StartMenuChoices(ConsoleKey command)
@@ -46,8 +45,7 @@ namespace FifaPlayers
 
         private void AddUserTeam()
         {
-
-            app.WhiteCenterTextWithoutNewLine("Ange ett önskat lagnamn: ");
+            app.CenterText("Ange ett önskat lagnamn: ");
             CreateUserTeam(Console.ReadLine());
             ShowUserTeamMoney();
             GoalKeeperChoice();
@@ -58,9 +56,10 @@ namespace FifaPlayers
         }
         private void GoalKeeperChoice()
         {
+            Console.Clear();
+            app.WhiteCenterTextWithoutNewLine("Välj en målvakt genom att skriva in Id");
             List<FootballPlayer> GoalKeepers = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Goalkeeper);
             ShowPlayers(GoalKeepers);
-            app.WhiteCenterTextWithoutNewLine("Välj en målvakt genom att skriva in Id");
             AddPlayerToTeam(int.Parse(Console.ReadLine()));
         }
 
@@ -69,8 +68,9 @@ namespace FifaPlayers
             List<FootballPlayer> defenders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Defender);
             for (int i = 0; i < 3; i++)
             {
-                ShowPlayers(defenders);
+                Console.Clear();
                 app.WhiteCenterTextWithoutNewLine("Välj back genom att skriva in Id");
+                ShowPlayers(defenders);
                 int id = int.Parse(Console.ReadLine());
                 defenders.RemoveAt(id);
                 AddPlayerToTeam(id);
@@ -84,8 +84,9 @@ namespace FifaPlayers
             List<FootballPlayer> forwards = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Midfielder);
             for (int i = 0; i < 1; i++)
             {
+                Console.Clear();
+                app.CenterText("Välj forward genom att skriva in Id");
                 ShowPlayers(forwards);
-                app.WhiteCenterTextWithoutNewLine("Välj forward genom att skriva in Id");
                 int id = int.Parse(Console.ReadLine());
                 forwards.RemoveAt(id);
                 AddPlayerToTeam(id);
@@ -99,8 +100,9 @@ namespace FifaPlayers
             List<FootballPlayer> midfielders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Midfielder);
             for (int i = 0; i < 3; i++)
             {
+                Console.Clear();
+                app.CenterText("Välj mittfältare genom att skriva in Id");
                 ShowPlayers(midfielders);
-                app.WhiteCenterTextWithoutNewLine("Välj mittfältare genom att skriva in Id");
                 int id = int.Parse(Console.ReadLine());
                 midfielders.RemoveAt(id);
                 AddPlayerToTeam(id);
@@ -118,11 +120,16 @@ namespace FifaPlayers
 
         private void AddPlayerToTeam(int id)
         {
-            new UserTeamPlayer
+            using (var context = new FifaContext())
             {
-                PlayerId = id,
-                UserTeamId = dataAccess.GetActiveUserId()
-            };
+               var userTeamPlayer =  new UserTeamPlayer
+                {
+                    PlayerId = id,
+                    UserTeamId = dataAccess.GetActiveUserId()
+                };
+                context.UserTeamPlayers.Add(userTeamPlayer);
+                context.SaveChanges();
+            }
         }
 
         private void ShowPlayers(List<FootballPlayer> player)
