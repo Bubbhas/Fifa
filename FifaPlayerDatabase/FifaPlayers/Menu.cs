@@ -75,10 +75,11 @@ namespace FifaPlayers
 
         private void DefendersChoice()
         {
-            if (dataAccess.CheckNumberofPlayers(Position.Defender) <= 4)
+            int tal = dataAccess.CheckNumberofPlayers(Position.Defender);
+            if (tal <= 4)
             {
                 List<FootballPlayer> defenders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Defender);
-                for (int i = 0; i < 3; i++)
+                for (int i = tal; i < 3; i++)
                 {
                     Console.Clear();
                     app.CenterText("Välj back genom att skriva in Id");
@@ -93,10 +94,11 @@ namespace FifaPlayers
         }
         private void MidfielderChoice()
         {
-            if (dataAccess.CheckNumberofPlayers(Position.Midfielder) <= 4)
+            int tal = dataAccess.CheckNumberofPlayers(Position.Midfielder);
+            if (tal <= 4)
             {
                 List<FootballPlayer> midfielders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Midfielder);
-                for (int i = 0; i < 3; i++)
+                for (int i = tal; i < 3; i++)
                 {
                     Console.Clear();
                     app.CenterText("Välj mittfältare genom att skriva in Id");
@@ -111,10 +113,11 @@ namespace FifaPlayers
         }
         private void ForwardChoice()
         {
-            if (dataAccess.CheckNumberofPlayers(Position.Forward) <= 2)
+            int tal = dataAccess.CheckNumberofPlayers(Position.Forward);
+            if (tal <= 2)
             {
                 List<FootballPlayer> forwards = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Forward);
-                for (int i = 0; i < 1; i++)
+                for (int i = tal; i < 1; i++)
                 {
                     Console.Clear();
                     app.CenterText("Välj forward genom att skriva in Id");
