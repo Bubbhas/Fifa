@@ -44,6 +44,11 @@ namespace FifaPlayers
             return context.Users.Select(x => x.Id).FirstOrDefault();
         }
 
+        internal void ChangePlayer(int v)
+        {
+            
+        }
+
         internal int GetActiveUserTeamId(int userId)
         {
             return context.Users.Single(x => x.Id == userId).ActiveUserTeamId;
