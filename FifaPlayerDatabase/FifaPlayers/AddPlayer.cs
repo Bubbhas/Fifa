@@ -44,7 +44,12 @@ namespace FifaPlayers
                     RealTeam = new RealTeam
                     {
                         Name = teamName
-                    }
+                    },
+
+                        Price = 4000000
+                
+                
+                    
                
                 }
                 );

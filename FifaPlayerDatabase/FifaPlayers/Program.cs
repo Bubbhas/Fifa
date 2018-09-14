@@ -8,7 +8,7 @@ namespace FifaPlayers
         {
             new AddPlayer().push();
 
-            //new App().Run();
+            new App().Run();
         }
     }
 }
