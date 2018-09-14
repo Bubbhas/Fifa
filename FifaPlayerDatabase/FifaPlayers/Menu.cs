@@ -51,83 +51,78 @@ namespace FifaPlayers
 
         private void AddUserTeam()
         {
-            app.CenterText("Ange ett önskat lagnamn: ");
-            CreateUserTeam(Console.ReadLine());
-            //ShowUserTeamMoney();
-            GoalKeeperChoice();
-            DefendersChoice();
-            MidfielderChoice();
-            ForwardChoice();
-            ShowUserTeamLineUp();
+            using (var context = new FifaContext())
+            {
+                app.CenterText("Ange ett önskat lagnamn: ");
+                CreateUserTeam(Console.ReadLine());
+                //ShowUserTeamMoney();
+                GoalKeeperChoice();
+                DefendersChoice();
+                MidfielderChoice();
+                ForwardChoice();
+
+                context.SaveChanges();
+                ShowUserTeamLineUp();
+            }
         }
         private void GoalKeeperChoice()
         {
-            if (dataAccess.CheckNumberofPlayers(Position.Goalkeeper)<1)
-            {
-                Console.Clear();
-                app.CenterText("Välj en målvakt genom att skriva in Id");
-                List<FootballPlayer> GoalKeepers = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Goalkeeper);
-                ShowPlayers(GoalKeepers);
-                AddPlayerToTeam(int.Parse(Console.ReadLine()));
-            }
+
+            Console.Clear();
+            app.CenterText("Välj en målvakt genom att skriva in Id");
+            List<FootballPlayer> GoalKeepers = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Goalkeeper);
+            ShowPlayers(GoalKeepers);
+            AddPlayerToTeam(int.Parse(Console.ReadLine()));
 
         }
 
         private void DefendersChoice()
         {
-            int tal = dataAccess.CheckNumberofPlayers(Position.Defender);
-            if (tal <= 4)
+            List<FootballPlayer> defenders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Defender);
+            for (int i = 0; i < 4; i++)
             {
-                List<FootballPlayer> defenders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Defender);
-                for (int i = tal; i < 3; i++)
-                {
-                    Console.Clear();
-                    app.CenterText("Välj back genom att skriva in Id");
-                    ShowPlayers(defenders);
-                    int id = int.Parse(Console.ReadLine());
-                    defenders.RemoveAt(id);
-                    AddPlayerToTeam(id);
-                    //ShowUserTeamMoney();
-                    Console.ReadKey();
-                }
+                Console.Clear();
+                app.CenterText("Välj back genom att skriva in Id");
+                ShowPlayers(defenders);
+                int id = int.Parse(Console.ReadLine());
+               // defenders.RemoveAt();
+                AddPlayerToTeam(id);
+                //ShowUserTeamMoney();
+                Console.ReadKey();
+
             }
         }
         private void MidfielderChoice()
         {
-            int tal = dataAccess.CheckNumberofPlayers(Position.Midfielder);
-            if (tal <= 4)
+
+            List<FootballPlayer> midfielders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Midfielder);
+            for (int i = 0; i < 4; i++)
             {
-                List<FootballPlayer> midfielders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Midfielder);
-                for (int i = tal; i < 3; i++)
-                {
-                    Console.Clear();
-                    app.CenterText("Välj mittfältare genom att skriva in Id");
-                    ShowPlayers(midfielders);
-                    int id = int.Parse(Console.ReadLine());
-                    midfielders.RemoveAt(id);
-                    AddPlayerToTeam(id);
-                    //ShowUserTeamMoney();
-                    Console.ReadKey();
-                }
+                Console.Clear();
+                app.CenterText("Välj mittfältare genom att skriva in Id");
+                ShowPlayers(midfielders);
+                int id = int.Parse(Console.ReadLine());
+                //midfielders.RemoveAt(id);
+                AddPlayerToTeam(id);
+                //ShowUserTeamMoney();
+                Console.ReadKey();
+
             }
         }
         private void ForwardChoice()
         {
-            int tal = dataAccess.CheckNumberofPlayers(Position.Forward);
-            if (tal <= 2)
+            List<FootballPlayer> forwards = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Forward);
+            for (int i = 0; i < 2; i++)
             {
-                List<FootballPlayer> forwards = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Forward);
-                for (int i = tal; i < 1; i++)
-                {
-                    Console.Clear();
-                    app.CenterText("Välj forward genom att skriva in Id");
-                    ShowPlayers(forwards);
-                    int id = int.Parse(Console.ReadLine());
-                    forwards.RemoveAt(id);
-                    AddPlayerToTeam(id);
-                    //ShowUserTeamMoney();
-                    Console.ReadKey();
-                }
+                Console.Clear();
+                app.CenterText("Välj forward genom att skriva in Id");
+                ShowPlayers(forwards);
+                int id = int.Parse(Console.ReadLine());
+                //forwards.RemoveAt(id);
+                AddPlayerToTeam(id);
+                //ShowUserTeamMoney();
+                Console.ReadKey();
+
             }
         }
 
@@ -141,13 +136,13 @@ namespace FifaPlayers
         {
             using (var context = new FifaContext())
             {
-               var userTeamPlayer =  new UserTeamPlayer
+                var userTeamPlayer = new UserTeamPlayer
                 {
                     PlayerId = id,
                     UserTeamId = dataAccess.GetActiveUserId()
                 };
                 context.UserTeamPlayers.Add(userTeamPlayer);
-                context.SaveChanges();
+                //context.SaveChanges();
             }
         }
 
