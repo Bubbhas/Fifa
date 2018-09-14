@@ -13,7 +13,7 @@ namespace FifaPlayers
         public void StartMenu()
         {
             Console.Clear();
-            app.WhiteCenterTextWithoutNewLine("Vad vill du göra?");
+            app.CenterText("Vad vill du göra?");
 
             app.CenterText("A) Skapa ditt fantasylag");
             app.CenterText("B) Ändra i ditt fantasy");
@@ -81,7 +81,7 @@ namespace FifaPlayers
 
         private void ForwardChoice()
         {
-            List<FootballPlayer> forwards = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Midfielder);
+            List<FootballPlayer> forwards = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Forward);
             for (int i = 0; i < 1; i++)
             {
                 Console.Clear();
