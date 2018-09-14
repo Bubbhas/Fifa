@@ -11,8 +11,9 @@ namespace FifaPlayers
         //public static User CurrentUser;
         internal void Run()
         {
-            new LogIn().LogInMethod();
-            //new Menu().StartMenu();
+
+            //new LogIn().LogInMethod();
+            new Menu().StartMenu();
             //CurrentUser = new User { UserName = "Kalle"};
         }
 

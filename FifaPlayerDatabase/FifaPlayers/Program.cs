@@ -6,7 +6,7 @@ namespace FifaPlayers
     {
         static void Main(string[] args)
         {
-            new AddPlayer().push();
+            //new AddPlayer().push();
 
             new App().Run();
         }

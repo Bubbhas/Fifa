@@ -16,7 +16,7 @@ namespace FifaPlayers
 
         internal List<FootballPlayer> GetAllPlayersWithSpecificPosiction(Position position)
         {
-            return context.FootballPlayers.Where(x => x.Position == position).ToList();
+            return context.FootballPlayers.Where(x => x.Position == position).Include(c=>c.RealTeam).ToList();
         }
 
         internal List<FootballPlayer> GetUserTeamPlayers(int id)
