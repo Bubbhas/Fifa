@@ -28,7 +28,7 @@ namespace FifaPlayers
             switch (command)
             {
                 case ConsoleKey.A: AddUserTeam(); break;
-                case ConsoleKey.B: någonmetod: break;
+                case ConsoleKey.B: ChangePlayersInTeam(); break;
                 case ConsoleKey.C: ShowUserTeamLineUp(); break;
             }
         }
@@ -41,6 +41,7 @@ namespace FifaPlayers
                 app.CenterText($"{player.Position.ToString()}: {player.Name}");
             }
             Console.ReadKey();
+            StartMenu();
         }
 
         private void AddUserTeam()
@@ -56,66 +57,76 @@ namespace FifaPlayers
         }
         private void GoalKeeperChoice()
         {
-            Console.Clear();
-            app.CenterText("Välj en målvakt genom att skriva in Id");
-            List<FootballPlayer> GoalKeepers = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Goalkeeper);
-            ShowPlayers(GoalKeepers);
-            AddPlayerToTeam(int.Parse(Console.ReadLine()));
+            if (dataAccess.CheckNumberofPlayers(Position.Goalkeeper)<1)
+            {
+                Console.Clear();
+                app.CenterText("Välj en målvakt genom att skriva in Id");
+                List<FootballPlayer> GoalKeepers = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Goalkeeper);
+                ShowPlayers(GoalKeepers);
+                AddPlayerToTeam(int.Parse(Console.ReadLine()));
+            }
+
         }
 
         private void DefendersChoice()
         {
-            List<FootballPlayer> defenders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Defender);
-            for (int i = 0; i < 3; i++)
+            if (dataAccess.CheckNumberofPlayers(Position.Defender) <= 4)
             {
-                Console.Clear();
-                app.CenterText("Välj back genom att skriva in Id");
-                ShowPlayers(defenders);
-                int id = int.Parse(Console.ReadLine());
-                defenders.RemoveAt(id);
-                AddPlayerToTeam(id);
-                ShowUserTeamMoney();
-                Console.ReadKey();
+                List<FootballPlayer> defenders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Defender);
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.Clear();
+                    app.CenterText("Välj back genom att skriva in Id");
+                    ShowPlayers(defenders);
+                    int id = int.Parse(Console.ReadLine());
+                    defenders.RemoveAt(id);
+                    AddPlayerToTeam(id);
+                    ShowUserTeamMoney();
+                    Console.ReadKey();
+                }
             }
         }
-
-        private void ForwardChoice()
-        {
-            List<FootballPlayer> forwards = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Forward);
-            for (int i = 0; i < 1; i++)
-            {
-                Console.Clear();
-                app.CenterText("Välj forward genom att skriva in Id");
-                ShowPlayers(forwards);
-                int id = int.Parse(Console.ReadLine());
-                forwards.RemoveAt(id);
-                AddPlayerToTeam(id);
-                ShowUserTeamMoney();
-                Console.ReadKey();
-            }
-        }
-
         private void MidfielderChoice()
         {
-            List<FootballPlayer> midfielders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Midfielder);
-            for (int i = 0; i < 3; i++)
+            if (dataAccess.CheckNumberofPlayers(Position.Midfielder) <= 4)
             {
-                Console.Clear();
-                app.CenterText("Välj mittfältare genom att skriva in Id");
-                ShowPlayers(midfielders);
-                int id = int.Parse(Console.ReadLine());
-                midfielders.RemoveAt(id);
-                AddPlayerToTeam(id);
-                ShowUserTeamMoney();
-                Console.ReadKey();
+                List<FootballPlayer> midfielders = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Midfielder);
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.Clear();
+                    app.CenterText("Välj mittfältare genom att skriva in Id");
+                    ShowPlayers(midfielders);
+                    int id = int.Parse(Console.ReadLine());
+                    midfielders.RemoveAt(id);
+                    AddPlayerToTeam(id);
+                    ShowUserTeamMoney();
+                    Console.ReadKey();
+                }
             }
-
+        }
+        private void ForwardChoice()
+        {
+            if (dataAccess.CheckNumberofPlayers(Position.Forward) <= 2)
+            {
+                List<FootballPlayer> forwards = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Forward);
+                for (int i = 0; i < 1; i++)
+                {
+                    Console.Clear();
+                    app.CenterText("Välj forward genom att skriva in Id");
+                    ShowPlayers(forwards);
+                    int id = int.Parse(Console.ReadLine());
+                    forwards.RemoveAt(id);
+                    AddPlayerToTeam(id);
+                    ShowUserTeamMoney();
+                    Console.ReadKey();
+                }
+            }
         }
 
         private void ShowUserTeamMoney()
         {
             UserTeam userTeam = dataAccess.GetCashOfUserTeam(dataAccess.GetActiveUserId());
-            app.CenterText($"{userTeam.TeamMoney}");
+            app.CenterText($"Du har kvar {userTeam.TeamMoney}kr");
         }
 
         private void AddPlayerToTeam(int id)
@@ -136,7 +147,7 @@ namespace FifaPlayers
         {
             foreach (var item in player)
             {
-                Console.WriteLine($"ID:{item.Id.ToString().PadRight(10)} Namn:{item.Name.PadRight(10)} {item.Price.ToString().PadRight(10)}{item.Position.ToString().PadRight(10)} Lag:{item.RealTeam.Name}");
+                Console.WriteLine($"ID:{item.Id.ToString().PadRight(10)} Namn:{item.Name.PadRight(10)} Pris:{item.Price.ToString().PadRight(10)} Position:{item.Position.ToString().PadRight(10)} Lag:{item.RealTeam.Name}");
             }
         }
 
