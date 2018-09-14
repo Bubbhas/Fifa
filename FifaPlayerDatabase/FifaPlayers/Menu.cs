@@ -57,7 +57,7 @@ namespace FifaPlayers
         private void GoalKeeperChoice()
         {
             Console.Clear();
-            app.WhiteCenterTextWithoutNewLine("Välj en målvakt genom att skriva in Id");
+            app.CenterText("Välj en målvakt genom att skriva in Id");
             List<FootballPlayer> GoalKeepers = dataAccess.GetAllPlayersWithSpecificPosiction(Position.Goalkeeper);
             ShowPlayers(GoalKeepers);
             AddPlayerToTeam(int.Parse(Console.ReadLine()));
@@ -69,7 +69,7 @@ namespace FifaPlayers
             for (int i = 0; i < 3; i++)
             {
                 Console.Clear();
-                app.WhiteCenterTextWithoutNewLine("Välj back genom att skriva in Id");
+                app.CenterText("Välj back genom att skriva in Id");
                 ShowPlayers(defenders);
                 int id = int.Parse(Console.ReadLine());
                 defenders.RemoveAt(id);
